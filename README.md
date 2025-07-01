@@ -40,3 +40,5 @@ To add doc pages:
     - Add a \_category\_.json file
     - Add a .mdx file with the name of you page to the folder
 
+
+
