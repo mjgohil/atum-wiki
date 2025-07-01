@@ -1,0 +1,42 @@
+# .github/workflows/deploy.yml
+name: Deploy Docusaurus to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Adjust this: typically 'main' or 'master'
+  workflow_dispatch: # Allows you to run the workflow manually from GitHub Actions tab
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }} # This makes the deployed URL available
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4 # Use the latest stable version
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4 # Use the latest stable version
+        with:
+          node-version: 18 # Ensure this matches a Node.js version compatible with your Docusaurus project
+          cache: 'yarn' # or 'npm' or 'pnpm' - choose based on your project's lock file
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile # or npm install --ci or pnpm install --frozen-lockfile
+
+      - name: Build Docusaurus website
+        run: yarn build # or npm run build or pnpm run build
+
+      - name: Deploy to GitHub Pages
+        id: deployment # Assign an ID to this step to access its outputs
+        uses: peaceiris/actions-gh-pages@v4 # Use the latest stable version
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build # Docusaurus builds to the 'build' directory by default
+          # Optional: If you are deploying a User/Organization site directly to the 'main' branch
+          # AND your GitHub Pages settings are configured to serve from 'main', uncomment this:
+          # publish_branch: main
