@@ -1,0 +1,8 @@
+{
+  "label": "Project Editing",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "The project editor is where you can create and edit constructs and elements. You can also search for motifs, restriction sites, ORFs and repeats."
+  }
+}

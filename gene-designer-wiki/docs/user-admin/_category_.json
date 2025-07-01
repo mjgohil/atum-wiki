@@ -1,0 +1,8 @@
+{
+  "label": "User Admin Pages",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "The user admin side of the site is where you will access your projects as well as where you will edit your library, motifs, restriction site groups and codon tables."
+  }
+}

@@ -1,0 +1,96 @@
+---
+sidebar_position: 1
+---
+import ReactPlayer from 'react-player'
+import filteringUrl from '@site/static/dashboard/video/filtering_projects.mp4'
+import dragAndDropUrl from '@site/static/dashboard/video/drag_and_drop_folder_tree.mp4'
+import dragInBrowserUrl from '@site/static/dashboard/video/dragging_and_dropping_in_browser.mp4'
+import dragToTreeUrl from '@site/static/dashboard/video/drag_from_browser_to_tree.mp4'
+import addNewStuff from '@site/static/dashboard/video/add_new_projects_folders.mp4'
+import editDelete from '@site/static/dashboard/video/edit_and_delete.mp4'
+import dropImport from '@site/static/dashboard/video/drop_files_to_import.mp4'
+
+# Projects
+![Projects Page](/dashboard/gif/dashboard_tile_list.gif)
+
+The projects page is where you can find and organize all the projects you are involved in. This includes your personal projects, projects shared with you by ATUM, and projects you are working on with team.
+
+## Project Folders
+![Projects Folders](/dashboard/gif/folder_tree_navigation.gif)
+
+On the left side of the project page you will find the folder tree. Here you can find:
+1. Personal  
+    - Your personal projects
+    - Projects shared with you by ATUM
+    - Your top 10 recently edit projects
+2. Teams
+    - All teams that you are a part of
+3. Filters
+    - by name
+    - by date created
+    - by type (project or folder)
+
+The folder tree is always ordered alphabetically. To move a folders, simply drag and drop them into their new destination. Folders can only be moved into 
+folders on the same root. Checkout the video below for an example.
+
+<ReactPlayer controls url={dragAndDropUrl} />
+
+### Filtering
+<ReactPlayer controls url={filteringUrl} />
+
+## Current Folder Browser
+
+To the right of the Project Folder Tree is the Current Directory Browser.
+
+### Navigate, Style & Sort
+On top of the Current Directory Browser we have, from left to right:
+
+![Tile View](/dashboard/img/nav_style_sort.png)
+
+1. Path/Breadcrumbs
+    - The path you followed to get the current folder you are looking ATUM
+2. Style Toggle
+    - There are 2 styles, [Tile](#tile) and [List](#list)
+    - The style chosen is saved and persists in the future
+3. Sort Options
+    - Sort by Name or date
+
+### Projects & Folders
+
+#### Tile
+![Tile View](/dashboard/img/tile_view.png)
+The tile view shows projects and folders as tiles. Folders are yellow and projects are white. Folders are always listed first.
+
+#### List
+![List View](/dashboard/img/list_view.png)
+The list view shows projects and folders in a list. Folders have a folder Icon and projects have a circle icon. Folders are always listed at the top.
+
+#### Interacting with Folders and Projects
+1. Double clicking a folder will navigate into it. This updates the Current Folder to be that folder
+2. Double clicking a project will open the project to be viewed or edited.
+3. One or more folders and projects can be selected at a time. Selected items can be [interacted with](#projectfolder-functions): 
+    - Edited (1 at a time)
+    - Deleted (1 or more)
+    - Moved to a different folder (1 or more)
+4. Folders and Projects can be moved by dragging and (1 or more):
+    - Dropping on a folder tile or folder list time
+    <ReactPlayer controls url={dragInBrowserUrl} />
+    - Dropping on a folder in the folder tree
+    <ReactPlayer controls url={dragToTreeUrl} />
+
+### Project/Folder Functions
+
+![Functions](/dashboard/img/project_functions.png)
+
+The buttons on the bottom on the Current Folder Browser are split:
+1. The black buttons on the right are for adding:
+    - Adding a folder
+    - Adding a project
+    - importing an existing project from a .gdx file
+    <ReactPlayer controls url={addNewStuff} />
+2. The buttons on the left are for changing existing folders and projects
+    - Editing selected folders/projects
+    - Deleting selected folders
+    <ReactPlayer controls url={editDelete} />
+3. GDX Files can also be dragged and dropped into the Current Folder Browser to be imported
+    <ReactPlayer controls url={dropImport} />

@@ -1,0 +1,8 @@
+{
+  "label": "Preferences",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Customize your own library, motifs, restriction site groups and codon tables."
+  }
+}
